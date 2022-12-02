@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Austin Saenz Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li><a href="generic.html">Project #1</a></li>
+							<li class="active"><a href="basic.html">Project #2</a></li>
+							<li><a href="elements.html">Coming Soon</a></li>
+                            
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/austin-saenz-72a61b222/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://public.tableau.com/app/profile/austin.saenz" target="_blank" class="iconify-icon icon="ion:logo-tableau></iconify-icon><span class="iconify" data-icon="ion:logo-tableau"></span>Tableau</span></a></li>
+							<li><a href="https://github.com/AustinSaenz" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>Data Cleaning in MySQL<br />
+									Portfolio Project</h1>
+									<p>In this project, I wanted to focus extensively on bettering my Data Cleaning skills using MySQL <br /> in order to do more advanced queries with my data. <br />
+									</p>
+								</header>
+								<div>
+									<a class="image main"><img src="images/neighborhood.jpeg" alt="" /></a>
+									<ul class="actions special">
+								</div>
+									<h2>First Steps Before Data Cleaning</h2>
+									<p>The first step I took when approaching this project was to find a useable dataset. To do this, I used Kaggle and found a raw Nashville housing dataset consisting of 19 columns and over 50,000 rows filled with housing data in Nashville from 2013 to 2019. After downloading the data as an Excel file, my next step was to import it into MySQL and start scrubbing! If you would like to check out the dataset, it can be found <a href="https://www.kaggle.com/datasets/yohan313/nashville-housing-data" target="_blank">here</a>. <p>
+										<a href="images/NashvilleHousingDataExcelSS.png">
+											<div class="image main"><img src="images/NashvilleHousingDataExcelSS.png" alt="Image of Raw Nashville Housing Data as a .csv file in Excel">
+											</div>
+											</a>
+									<h2>Data Cleaning Process</h2>
+									<p>Before I could begin cleaning the Nashville Housing Data that I had collected from Kaggle, I first needed to create a table in MySQL and then import the data. Below is a query that shows how the process of importing my data into MySQL was completed.<p>
+											<a href="images/Query1.png">
+											<div class="image main"><img src="images/Query1.png" alt="Image of Raw Covid Data as a .csv file in Excel">
+											</div>
+											</a>
+									<p>After my data had been imported successfully, I noticed that there were a lot of values in the ‘Property Address’ column that were blank. To make these blank values appear as ‘null’ values I created a query which can be seen below.  </p>
+											<a href="images/Query2.png">
+											<div class="image main"><img src="images/Query2.png" alt="Image of first three MySQL queries">
+											</div>
+											</a>
+									<p>Now these values were not necessarily null values, because I realized that when the ‘Parcel ID’ had a duplicate, the ‘Property Address’ was filled. This meant that I needed to populate the blank values so that an address would be shown when ‘Parcel ID’ was duplicated, but the ‘Property Address’ was not. To do this, I created another query, which includes a self join that joins the table to itself in order to find the missing ‘Property Address’ values by making sure the ‘Unique ID’ does not match. Once all of the ‘null’ values for ‘Property Address’ were found, I populated the ‘null’ values using the join from the table that had the ‘Property Address’ listed, and updated the original table.</p>
+											<a href="images/Query3.png">
+											<div class="image main"><img src="images/Query3.png" alt="Image of first three MySQL queries">
+											</div>
+											</a>
+									<p>Once all of the ‘Property Addresses’ have been populated so that there are no ‘null’ values, I wanted to further clean up the column. In the original table, all of the ‘Property Addresses’ contained the street address, as well as the city the house was located in. In order to further clean this data and make it easier to use, I created the following query which breaks up all of the ‘Property Addresses’ into two new separate columns; one containing the property street address itself, the other column containing the city.</p>
+											<a href="images/Query4.png">
+											<div class="image main"><img src="images/Query4.png" alt="Image of first three MySQL queries">
+											</div>
+											</a>
+									<p>Next, I needed to do the exact same thing for the ‘Owner Address’. This time however, all of the ‘Owner Addresses’ contained not only the street address and the city, but the state as well. The following query serves the same purpose as the above query for ‘Property Address’, but this time I used the SUBSTRING_INDEX function to simplify the query while still breaking up ‘Owner Address’ into street address, city, and state. </p>
+											<a href="images/Query5.png">
+											<div class="image main"><img src="images/Query5.png" alt="Image of first three MySQL queries">
+											</div>
+											</a>
+									<p>While continuing to clean up this data, the next thing I realized was that the ‘Sold as Vacant’ column had four different values: ‘y’, ‘n’, and ‘Yes’, ‘No’. To make this data more efficient and less confusing for future analysis, I created the following query which changes all of the ‘y’ values to ‘Yes’ and all of the ‘n’ values to ‘No’.</p>
+											<a href="images/Query6.png">
+											<div class="image main"><img src="images/Query6.png" alt="Image of first three MySQL queries">
+											</div>
+											</a>
+									<p>Finally, the last two queries that I ran were focused on removing all of the duplicates that were within the initial dataset, and also deleting any and all columns that were no longer needed. The first query I used to remove all of the duplicates involved a common table expression, or a ‘CTE’. A ‘CTE’ is a temporary table that exists within the scope of a single statement, which can be referred to later within that statement; meaning this was perfect to find all of the duplicates and delete them. When removing duplicates, there has to be a way to identify the rows that show up multiple times, a.k.a the duplicates. For this I used ROW_NUMBER(), which is used to return the sequential number for each row within its partition. This simply means for any row that is a duplicate, it will return a number greater than 1 (the higher the number the more it is duplicated). This query is shown at the beginning of the image below, followed by one last simple query that allowed me to delete the columns that I did not need anymore. </p>
+											<a href="images/Query7.png">
+											<div class="image main"><img src="images/Query7.png" alt="Image of first three MySQL queries">
+											</div>
+											</a>
+									
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+					
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>
+								Austin, TX 78754</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p>(979) 224-3895</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p>absaenz13@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/austin-saenz-72a61b222/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									<li><a href="https://public.tableau.com/app/profile/austin.saenz" target="_blank" class="iconify-icon icon="ion:logo-tableau></iconify-icon><span class="iconify" data-icon="ion:logo-tableau"></span>Tableau</span></a></li>
+									<li><a href="https://github.com/AustinSaenz" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

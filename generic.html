@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Austin Saenz Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li class="active"><a href="generic.html">Project #1</a></li>
+							<li><a href="basic.html">Project #2</a></li>
+							<li><a href="elements.html">Coming Soon</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/austin-saenz-72a61b222/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://public.tableau.com/app/profile/austin.saenz" target="_blank" class="iconify-icon icon="ion:logo-tableau></iconify-icon><span class="iconify" data-icon="ion:logo-tableau"></span>Tableau</span></a></li>
+							<li><a href="https://github.com/AustinSaenz" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>Covid-19<br />
+									Portfolio Project</h1>
+									<p>In this project, I honed my skills of Data Exploration and Data Visualization in order to
+									organize and transform raw Covid-19 data using MySQL so that I could later create a simple but effective Tableau Dashboard that helps to tell the story of the world's most recent global pandemic. 
+									</p>
+								</header>
+								<div>
+									<a class="image main"><img src="images/covid-19.png" alt="Coronavirus Disease 2019 Outbreak Covid-19" /></a>
+									<ul class="actions special">
+								</div>
+									<h2>Obtaining & Exploring My Data</h2>
+									<p>The first step I took in this project was obtaining my data. For this project, I used publicly available data regarding the number of Covid-19 cases, deaths, hospitalizations, and tests from every country around the world. The data I used was provided by the numerous researchers and contributers at Our World In Data, and can be found <a href="https://ourworldindata.org/covid-deaths" target="_blank">here</a>. After downloading this raw data with 67 columns and over 200,000 rows, I decided to break the data up into two datasets, one focusing on information regarding Covid Deaths and the other with information on Covid Vaccination data. My next step was to import the data into MySQL and start exploring!<p>
+										<a href="images/CovidData.csv Screenshot.jpg">
+										<div class="image main"><img src="images/CovidData.csv Screenshot.jpg" alt="Image of Raw Covid Data as a .csv file in Excel">
+										</div>
+										</a>
+								<p>After successfully importing my data into MySQL, I knew that there was a lot of raw data within my dataset that would not become important in my analysis. To help filter and sort my data, I only focused on analyzing the location, date, total and new cases, total deaths, and population. After doing so, I grew more curious on the impact of Covid-19 in the United States, and ran the first few queries focusing on the death percentage and the percent of the U.S. population that had been infected by Covid. </p>
+									<a href="images/1st3CovidQueries.png">
+									<div class="image main"><img src="images/1st3CovidQueries.png" height="480" alt="Image of first three MySQL queries">
+									</div>
+									</a>
+								<p>Expanding on my curiosity with the United States, I wanted to look at other countries and continents around the world, and compare them to my findings for the U.S. In doing so, I ran the following queries:</p>
+									<div class="row">
+										<div class="col-12 col-12-small">
+											<ul><ul><ul><ul>
+												<li>Query that examined the countries with the highest infection rate relative to their population</li>
+												<li>Query that showed each of the continent’s total death count, including the world total</li>
+												<li>Query that showed each of the country’s total death count</li>
+												<li>Query that showed each continent’s death percentage based off their total death count divided by total continental cases</li>
+											</ul></ul></ul></ul>
+										</div>
+									</div>
+									<figure>
+										<a href="images/1st2outof4queriesinlist.png">
+										<div class="image main"><img src="images/1st2outof4queriesinlist.png" alt="MySQL Queries pt.1">
+										<br />
+										<figcaption><sup>Queries that examine countries with the highest infection rate relative to population and continental total death count.</sup></figcaption>
+										</div>
+										</a>
+									</figure>
+									<figure>
+										<a href="images/last2outof4queriesinlist.png">
+										<div class="image main"><img src="images/last2outof4queriesinlist.png" height="500" alt="MySQL Queries pt.2">
+										<br />
+										<figcaption><sup>Queries that examine each country's total death count and each continent's death percentage based off their total death count divided by total continental cases.</sup></figcaption>
+										</div>
+										</a>
+									</figure>
+								<p>Following my examination of the data regarding Covid-19 deaths, I then wanted to analyze the Covid-19 vaccination data I had, of which I joined the two tables together.  After joining the two tables together in MySQL, I wanted to study the percentage of each country’s population that has been vaccinated by looking at the total population versus total vaccination count. </p>
+									<a href="images/joinqueriesmysql.png">
+									<div class="image main"><img src="images/joinqueriesmysql.png" alt="MySql Join Queries">
+									</div>
+									</a>
+								<h2>Data Visualization</h2>
+								<p>Finally, after manipulating and examining my data through MySQL, I was able to move on to visualizing my data and telling its story to the world. To help do this, I used Tableau and created an interactive dashboard from several "views" I had made with MySQL queries. Below are the several "views" that I used to help create my Tableau dashboard, as well as the dashboard itself.</p>
+								<div class="box">
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<a href="images/View1.png">
+											<div class="col-4"><span class="image fit"><img src="images/View1.png" height="135" alt="View1" /></span></div>
+											</a>
+											<a href="images/View2.png">
+											<div class="col-4"><span class="image fit"><img src="images/View2.png" height="135" alt="View2" /></span></div>
+											</a>
+											<a href="images/View3.png">
+											<div class="col-4"><span class="image fit"><img src="images/View3.png" height="135" alt="View3" /></span></div>
+											</a>
+											<!-- Break -->
+											<a href="images/View4.png">
+											<div class="col-4"><span class="image fit"><img src="images/View4.png" height="135" alt="View4" /></span></div>
+											</a>
+											<a href="images/View5.png">
+											<div class="col-4"><span class="image fit"><img src="images/View5.png" height="135" alt="View5" /></span></div>
+											</a>
+											<a href="images/View6.png">
+											<div class="col-4"><span class="image fit"><img src="images/View6.png" height="135" alt="View6" /></span></div>
+											</a>
+											<!-- Break -->
+											<a href="images/View7.png">
+											<div class="col-4"><span class="image fit"><img src="images/View7.png" height="135" alt="View7" /></span></div>
+											</a>
+											<a href="images/View8.png">
+											<div class="col-4"><span class="image fit"><img src="images/View8.png" height="135" alt="View8" /></span></div>
+											</a>
+											<a href="images/View9.png">
+											<div class="col-4"><span class="image fit"><img src="images/View9.png" height="135" alt="View9" /></span></div>
+											</a>
+										</div>
+									</div>	
+								</div>
+								<div class='tableauPlaceholder' id='viz1669919857034' style='position: relative'><noscript><a href='#'><img alt='World Covid Data ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CovidDashboardPortfolioProject_16685468636190&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CovidDashboardPortfolioProject_16685468636190&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CovidDashboardPortfolioProject_16685468636190&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1669919857034');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+								<figcaption><sup>Feel free to explore my interactive dashboard more in depth by making it full screen and dragging your cursor around!
+								</sup></figcaption>
+								<div>
+								</div>
+								<br />
+								<br />
+									<h2>The Results</h2>
+									<p>With all of the data exploration and visualization complete, it was time to analyze the results of my project. While studying the data, it was interesting to compare the global numbers between all of the continents and find that Europe has the most total cases of Covid-19 and the highest total death count. Using the ‘Infected Population Percentage Per Continent/Income’ chart I created, it was fascinating to see that the European Union and the rest of Europe also had the highest percentage of infected people per their population. This could be a result of the close proximity among countries in the European continent as well as a factor of when their borders began to close. More interestingly, North America as a continent is third in total cases with close to 80 million cases less than Asia, but is second in total death count!</p>
+								
+									<p>Focusing on each country, the top ten countries with the highest infection percentage per population were: </p>
+									<div class="col-6 col-12-small">
+
+										<ol>
+											<li>Cyprus - 67.26%</li>
+											<li>Faroe Islands - 65.25%</li>
+											<li>San Marino - 64.30%</li>
+											<li>Gibraltar - 61.58%</li>
+											<li>Austria - 61.06%</li>
+											<li>Andorra - 58.35%</li>
+											<li>Slovenia - 58.34%</li>
+											<li>Denmark - 56.74%</li>
+											<li>Iceland - 55.40%</li>
+											<li>Saint Pierre and Miquelon - 54.90%</li>
+										</ol>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>
+								Austin, TX 78754</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p>(979) 224-3895</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p>absaenz13@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/austin-saenz-72a61b222/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									<li><a href="https://public.tableau.com/app/profile/austin.saenz" target="_blank" class="iconify-icon icon="ion:logo-tableau></iconify-icon><span class="iconify" data-icon="ion:logo-tableau"></span>Tableau</span></a></li>
+									<li><a href="https://github.com/AustinSaenz" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
